@@ -3,42 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Search Template</title>
+  <title>Google Search </title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="google-style.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="left">
-      <div class="google-logo">Google</div>
+      <div class="google-logo">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_74x24dp.png" alt="Google">
+      </div>
       <div class="search-bar">
         <input type="text" value="Constant Dullaart" />
       </div>
     </div>
     <div class="right">
-      <div class="user">P</div>
+      <div class="user-logo">C</div>
     </div>
   </header>
 
   <nav class="nav-bar">
     <div class="tabs">
-      <a href="#" class="active">All</a>
-      <a href="#">Images</a>
-      <a href="#">Videos</a>
-      <a href="#">News</a>
-      <a href="#">Maps</a>
-      <a href="#">More ▾</a>
+      <a class="active">All</a>
+      <a>Images</a>
+      <a>Videos</a>
+      <a>News</a>
+      <a>Maps</a>
+      <a>More ▾</a>
+      <a>Tools ▾</a>
     </div>
-    <div class="tools">Tools</div>
   </nav>
 
   <main class="main">
     <section class="results">
       <p class="about">About 2,340,000 results (0.42 seconds)</p>
 
-      <article class="search-result">
+      <div class="search-result-container">
+        <article class="search-result">
         <a href="#" class="url">constantdullaart.com</a>
         <h2><a href="#">Constant Dullaart</a></h2>
         <p>
@@ -55,6 +58,11 @@
           His works often explore online visual culture and the digital economy.
         </p>
       </article>
+      </div>
+      <div class="footer">
+        <img src="assets/google-footer.png" alt="Google Logo"/>
+      </div>
+
     </section>
 
     <aside class="panel">
@@ -68,18 +76,10 @@
           <div><strong>Education:</strong> Rijksakademie van beeldende kunsten</div>
           <div><strong>Period:</strong> Post-Internet</div>
         </div>
-
-        <div class="photo-grid">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Constant_Dullaart_in_gallery.jpg" alt="">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Constant_Dullaart_talk.jpg" alt="">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Constant_Dullaart_exhibit.jpg" alt="">
-        </div>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Constant_Dullaart_in_gallery.jpg" alt="">
       </div>
     </aside>
   </main>
-
-  <footer>
-    <p>© 2025 – Mock Google Search Template</p>
-  </footer>
 </body>
 </html>
