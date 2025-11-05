@@ -1,139 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Constant Dullaart — Mini-Wikipedia</title>
-
-    <!-- link to the external stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- (Optional) favicon -->
-    <link rel="icon" href="data:," />
-  </head>
-  <body class="skin-vector">
-    <!-- Top header bar -->
-    <header id="mw-head">
-      <div class="mw-head-inner">
-        <a class="mw-logo" href="#">
-          <!-- simple SVG logo so you don't need image files -->
-          <svg viewBox="0 0 64 64" aria-hidden="true">
-            <circle cx="32" cy="32" r="31" />
-            <text x="32" y="39" text-anchor="middle">W</text>
-          </svg>
-          <span class="mw-project">Wikipedia</span>
-          <span class="mw-subtitle">The Free Encyclopedia</span>
-        </a>
-
-        <form class="mw-search" role="search">
-          <label class="visually-hidden" for="searchInput">Search</label>
-          <input id="searchInput" name="search" type="search" placeholder="Search Wikipedia" />
-          <button type="submit">Search</button>
-        </form>
-      </div>
-    </header>
-
-    <!-- Page layout: sidebar + content -->
-    <div id="contentWrapper">
-      <!-- Left sidebar (Contents / navigation) -->
-      <nav id="mw-panel" aria-label="Site">
-        <div class="portal">
-          <h3>Contents</h3>
-          <ul class="portal-list">
-            <li><a href="#Biography">Biography</a></li>
-            <li><a href="#Works">Works</a></li>
-            <li><a href="#Awards">Awards</a></li>
-            <li><a href="#References">References</a></li>
-            <li><a href="#External_links">External links</a></li>
-          </ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sample Article — Wikipedia Clone</title>
+  <link rel="stylesheet" href="wiki.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar_inner">
+      <div class="wordmark">
+        <span class="w_mark">W</span>
+        <div class="w_text">
+          <div>Wikipedia</div>
+          <small>The free encyclopedia</small>
         </div>
+      </div>
+
+      <form class="search" role="search">
+        <input type="search" placeholder="Search Wikipedia" aria-label="Search" />
+        <button type="submit">Search</button>
+      </form>
+
+      <nav class="user_links">
+        <a href="#">Create account</a>
+        <span>•</span>
+        <a href="#">Log in</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Page frame -->
+  <div class="frame">
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Site navigation">
+      <div class="side_section">
+        <div class="side_header">Main page</div>
+        <a class="side_link" href="#">Contents</a>
+        <a class="side_link" href="#">Current events</a>
+        <a class="side_link" href="#">Random article</a>
+        <a class="side_link" href="#">About Wikipedia</a>
+        <a class="side_link" href="#">Contact us</a>
+        <a class="side_link" href="#">Donate</a>
+      </div>
+      <div class="side_section">
+        <div class="side_header">Contribute</div>
+        <a class="side_link" href="#">Help</a>
+        <a class="side_link" href="#">Learn to edit</a>
+        <a class="side_link" href="#">Community portal</a>
+        <a class="side_link" href="#">Recent changes</a>
+        <a class="side_link" href="#">Upload file</a>
+      </div>
+      <div class="side_section">
+        <div class="side_header">Tools</div>
+        <a class="side_link" href="#">What links here</a>
+        <a class="side_link" href="#">Related changes</a>
+        <a class="side_link" href="#">Special pages</a>
+        <a class="side_link" href="#">Permanent link</a>
+        <a class="side_link" href="#">Page information</a>
+      </div>
+      <div class="side_section">
+        <div class="side_header">Languages</div>
+        <a class="side_link" href="#">Español</a>
+        <a class="side_link" href="#">Français</a>
+        <a class="side_link" href="#">Deutsch</a>
+        <a class="side_link" href="#">中文</a>
+        <a class="side_link" href="#">日本語</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+      <!-- Page tabs mimic -->
+      <div class="tabs">
+        <div class="tabs_left">
+          <a class="tab active" href="#">Article</a>
+          <a class="tab" href="#">Talk</a>
+        </div>
+        <div class="tabs_right">
+          <a class="tab active" href="#">Read</a>
+          <a class="tab" href="#">View source</a>
+          <a class="tab" href="#">View history</a>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="title">Sample Article</h1>
+
+      <!-- Page meta line -->
+      <div class="subtitle">
+        From Wikipedia, the free encyclopedia
+      </div>
+
+      <!-- Infobox + lead in a two column layout -->
+      <div class="lead_wrap">
+        <p class="lead">
+          <b>Sample Article</b> is a placeholder page that looks and feels like a Wikipedia
+          entry. Replace this text with your own content. It includes a table of contents,
+          an infobox, sections, references, and the familiar Vector skin layout.
+        </p>
+
+        <figure class="infobox" role="complementary" aria-label="Infobox">
+          <figcaption class="infobox_title">Sample box</figcaption>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/120px-Wikipedia-logo.png" alt="Sample image" />
+          <table class="infotable">
+            <tr><th>Created</th><td>2025</td></tr>
+            <tr><th>Type</th><td>Demo layout</td></tr>
+            <tr><th>License</th><td>CC BY-SA style demo</td></tr>
+          </table>
+        </figure>
+      </div>
+
+      <!-- TOC -->
+      <nav class="toc" aria-label="Contents">
+        <div class="toc_header">Contents</div>
+        <ol>
+          <li><a href="#section_1">History</a></li>
+          <li><a href="#section_2">Design</a></li>
+          <li><a href="#section_3">Usage</a></li>
+          <li><a href="#section_4">See also</a></li>
+          <li><a href="#references">References</a></li>
+        </ol>
       </nav>
 
-      <!-- Main column -->
-      <main id="mw-content" role="main">
-        <!-- Article title -->
-        <h1 id="firstHeading">Constant Dullaart</h1>
+      <!-- Sections -->
+      <h2 id="section_1">History</h2>
+      <p>
+        Write a short overview here. Use <code>&lt;h2&gt;</code> for major sections and
+        <code>&lt;h3&gt;</code> for subsections to mirror encyclopedia structure.
+      </p>
 
-        <!-- Tabs below title -->
-        <div class="mw-page-tabs" role="tablist" aria-label="Page tabs">
-          <button class="tab is-active" role="tab" aria-selected="true">Article</button>
-          <button class="tab" role="tab" aria-selected="false">Talk</button>
+      <h2 id="section_2">Design</h2>
+      <p>
+        The goal is visual parity: a serif body, narrow line length, subtle blue links,
+        light gray borders, and lots of white space.
+      </p>
+      <h3>Typography</h3>
+      <p>
+        Body text uses a Georgia style fallback. Headings use a system serif stack.
+      </p>
+
+      <h2 id="section_3">Usage</h2>
+      <p>
+        Replace titles, paragraphs, and infobox rows with your content. The layout will adapt.
+      </p>
+
+      <h2 id="section_4">See also</h2>
+      <ul>
+        <li><a href="#">Related topic one</a></li>
+        <li><a href="#">Related topic two</a></li>
+      </ul>
+
+      <!-- References -->
+      <h2 id="references">References</h2>
+      <ol class="references">
+        <li>Reference example one.</li>
+        <li>Reference example two.</li>
+      </ol>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div>
+          This page is a visual clone for learning and personal use.
         </div>
-
-        <!-- Site notice / subtitle -->
-        <div class="mw-site-subtitle">From Wikipedia, the free encyclopedia</div>
-
-        <!-- Infobox (floats right) -->
-        <aside class="infobox">
-          <figure class="infobox-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Placeholder_Person.jpg" alt="Subject photo placeholder" />
-            <figcaption>Constant Dullaart, Crypto Design Challenge 2016</figcaption>
-          </figure>
-          <table class="infobox-data">
-            <tbody>
-              <tr><th>Born</th><td>7 March 1979 (age 46) · Leiderdorp, Netherlands</td></tr>
-              <tr><th>Nationality</th><td>Dutch</td></tr>
-              <tr><th>Known for</th><td>Conceptual art, Net art</td></tr>
-              <tr><th>Movement</th><td>Balconism</td></tr>
-              <tr><th>Awards</th><td>Prix Net Art (2015)</td></tr>
-            </tbody>
-          </table>
-        </aside>
-
-        <!-- Article lead -->
-        <p><b>Constant Dullaart</b> (born Leiderdorp, 7 March 1979) is a Dutch
-          <a href="#">conceptual artist</a>, media artist, internet artist, and curator.
-          His work is deeply connected to the Internet.</p>
-
-        <!-- Table of contents -->
-        <section class="toc" aria-label="Contents">
-          <div class="toc-title">Contents</div>
-          <ol class="toc-list">
-            <li><a href="#Biography">1&nbsp; Biography</a></li>
-            <li><a href="#Prix_Net_Art_2015">2&nbsp; Prix Net Art, 2015</a></li>
-            <li><a href="#Works">3&nbsp; Works</a></li>
-            <li><a href="#References">4&nbsp; References</a></li>
-            <li><a href="#External_links">5&nbsp; External links</a></li>
-          </ol>
-        </section>
-
-        <!-- Sections (replace with your own content) -->
-        <h2 id="Biography">Biography</h2>
-        <p>Dullaart was born and raised in Leiderdorp in the Netherlands. He attended the
-          Gerrit Rietveld Academie from 1997 to 2002, and the Rijksakademie van beeldende kunsten
-          in the year 2007–2008. After his graduation in 1997 he settled as artist in Amsterdam.
-          From 2010 to 2015 he lived in Berlin.</p>
-
-        <h2 id="Prix_Net_Art_2015">Prix Net Art, 2015</h2>
-        <blockquote>
-          “The fluidity of boundaries between artist and tech communities and questions
-          of authorship, virtuosity, and the performativity of art in a mediated environment
-          are an important aspect of the work…”
-        </blockquote>
-
-        <h2 id="Works">Works</h2>
-        <ul>
-          <li><i>Jennifer in Paradise</i> (series)</li>
-          <li><i>The Death of the URL</i> (2013)</li>
-          <li><i>The Revolving Internet</i> (2010)</li>
-        </ul>
-
-        <h2 id="References">References</h2>
-        <ol class="references">
-          <li>Artist bio. <span class="ref-note">Accessed 2025.</span></li>
-          <li>Prix Net Art citation. <span class="ref-note">2015.</span></li>
-        </ol>
-
-        <h2 id="External_links">External links</h2>
-        <ul>
-          <li><a href="#">Official website</a></li>
-          <li><a href="#">Interview</a></li>
-        </ul>
-
-        <footer id="mw-footer">
-          <p>Content is available under CC BY-SA unless otherwise noted.</p>
-        </footer>
-      </main>
-    </div>
-  </body>
+        <div class="footer_links">
+          <a href="#">Privacy policy</a>
+          <span>•</span>
+          <a href="#">About</a>
+          <span>•</span>
+          <a href="#">Contact</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
 </html>
