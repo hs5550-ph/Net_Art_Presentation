@@ -154,6 +154,9 @@ body {
 .footer {
   margin-top: 30px;
   text-align: left;
+}
+
+#google-footer-img {
   transform: scale(0.5);
 }
 
