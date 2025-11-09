@@ -4,8 +4,8 @@
     const css = `
       .panel-card.revolve {
         position: relative; /* allow bubble absolute positioning */
-        animation: revolve-rotate 20s linear infinite;
         transform-origin: center center;
+        animation: revolve-rotate 20s linear infinite;
       }
 
       @keyframes revolve-rotate {
@@ -37,22 +37,49 @@
     insertStyles();
     const panel = document.querySelector('.panel-card');
     const body = document.querySelector("body");
+    const imgs = Array.from(document.querySelectorAll('img'));
+    const timeInterval = 50;
 
+    let savedState = localStorage.getItem('panelState');
+    let state = savedState ? JSON.parse(savedState) : {
+      hue: 0,
+      lastUpdate: Date.now()
+    };
+
+    const elapsedSeconds = (Date.now() - state.lastUpdate) / 1000;
+    const degree = 40; 
+    let hue = (state.hue + (elapsedSeconds * degree)) % 360;
+
+    const applyState = (currentHue) => {
+      const filter = `hue-rotate(${currentHue}deg) saturate(1.05)`;
+      panel.style.filter = filter;
+      imgs.forEach(img => { img.style.filter = filter; });
+      body.style.background = `linear-gradient(120deg, hsl(${currentHue} 60% 95%), hsl(${(currentHue + 60) % 360} 60% 92%))`;
+    };
+
+    applyState(hue);
     panel.classList.add('revolve');
 
-      let hue = 0;
-      const imgs = Array.from(document.querySelectorAll('img'));
-      const timeInterval = 50; 
-      const interval = setInterval(() => {
-        hue = (hue + 2) % 360;
-       
-        const filter = `hue-rotate(${hue}deg) saturate(1.05)`;
-        panel.style.filter = filter;
-        imgs.forEach(img => { img.style.filter = filter; });
-        body.style.background = `linear-gradient(120deg, hsl(${hue} 60% 95%), hsl(${(hue + 60) % 360} 60% 92%))`;
-      }, timeInterval);
+    const interval = setInterval(() => {
+      hue = (hue + 2) % 360;
+      applyState(hue);
 
-    // cleanup 
-    window.addEventListener('beforeunload', () => clearInterval(interval));
+      if (hue % 40 === 0) {
+        const newState = {
+          hue,
+          lastUpdate: Date.now()
+        };
+        localStorage.setItem('panelState', JSON.stringify(newState));
+      }
+    }, timeInterval);
+
+    window.addEventListener('beforeunload', () => {
+      clearInterval(interval);
+      const finalState = {
+        hue,
+        lastUpdate: Date.now()
+      };
+      localStorage.setItem('panelState', JSON.stringify(finalState));
+    });
   });
 })();

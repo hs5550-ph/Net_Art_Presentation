@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sample Article — Wikipedia Clone</title>
   <link rel="stylesheet" href="wiki.css" />
+
+  <style>
+    * {
+      transform: rotate(360deg);
+      animation: spin 200s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Top bar -->
